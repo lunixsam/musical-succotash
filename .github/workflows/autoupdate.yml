@@ -1,0 +1,43 @@
+#!/bin/bash
+#auto update and upgrade fro cron job
+#  autoupdate.sh  sam moore Oct 31th 2013 make sure you have figlet and espeak installed. 
+# sudo add-apt-repository ppa:vincent-c/ponysay
+# sudo apt-get update
+# sudo apt-get install ponysay
+# sudo apt-get install espeak && apt-get install figlet -y > /dev/null
+# or grab ponysay from a snap for newer OS builds
+# apt-get install snap snapd ddate espeak figlet
+# snap install ponysay
+
+swapoff -a && swapon -a
+/snap/bin/ponysay "Disk Cleanup"
+ espeak "disk cleanup"
+     /usr/bin/apt-get -qy autoremove > /dev/null
+     /usr/bin/apt-get -qy clean > /dev/null
+     /usr/bin/apt-get -qy autoclean > /dev/null
+/snap/bin/ponysay "Cleanup Finished"
+ espeak "cleanup finished"
+        sleep 2
+/snap/bin/ponysay "Starting Update"
+ espeak "starting update"
+     /usr/bin/apt-get -qy update > /dev/null
+/snap/bin/ponysay "Update Finished"
+ espeak "update finished"
+        sleep 2
+/snap/bin/ponysay "Starting Upgrade"
+ espeak "starting upgrade"
+     /usr/bin/apt-get -qy upgrade > /dev/null
+/snap/bin/ponysay "Upgrade Finished"
+ espeak "upgrade finished"
+  sleep 5
+/snap/bin/ponysay "Starting Dist-update"
+ espeak "starting distribution upgrade"
+     /usr/bin/apt-get -qy dist-upgrade > /dev/null
+/snap/bin/ponysay "Dist-upgrade finished"
+ espeak "distribution upgrade finished"
+        sleep 3
+swapoff -a && swapon -a
+ddate | lolcat
+
+exit 0
+

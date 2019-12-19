@@ -35,7 +35,6 @@
 /snap/bin/ponysay "Dist-upgrade finished"
  espeak "distribution upgrade finished"
         sleep 3
-swapoff -a && swapon -a
 ddate | lolcat
 
 exit 0

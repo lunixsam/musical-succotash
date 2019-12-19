@@ -9,7 +9,6 @@
 # apt-get install snap snapd ddate espeak figlet
 # snap install ponysay
 
-swapoff -a && swapon -a
 /snap/bin/ponysay "Disk Cleanup"
  espeak "disk cleanup"
      /usr/bin/apt-get -qy autoremove > /dev/null
